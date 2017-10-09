@@ -1,0 +1,67 @@
+import { fromJS } from 'immutable';
+import {
+  SET_CURRENT_PAGE,
+  SET_ITEMS_PER_PAGE,
+  SET_TOTAL_ITEMS,
+  LIST_UPDATE_START,
+  LIST_UPDATE_STOP,
+} from './constants';
+import { RESET_LIST } from './List/constants';
+import listReducer from './List/reducer';
+import {
+  EDIT_MODE_ON,
+  EDIT_MODE_OFF,
+  SAVE,
+  SAVE_SUCCESS,
+  SAVE_ERROR,
+  CREATE,
+  DELETE,
+  DELETE_SUCCESS,
+  DELETE_ERROR,
+} from './Item/constants';
+import { SET_SORT_FIELD, SET_SORT_DIRECTION, SORT_DIRECTION_DESC } from './Header/constants';
+
+export const initialState = fromJS({
+  list: [],
+  currentPage: 1,
+  itemsPerPage: 25,
+  totalItems: 120,
+  updating: false,
+  sortDirection: SORT_DIRECTION_DESC,
+  sortField: 'date',
+});
+
+const reducer = (state = initialState, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case RESET_LIST:
+    case EDIT_MODE_ON:
+    case EDIT_MODE_OFF:
+    case SAVE:
+    case SAVE_SUCCESS:
+    case SAVE_ERROR:
+    case CREATE:
+    case DELETE:
+    case DELETE_SUCCESS:
+    case DELETE_ERROR:
+      return state.set('list', listReducer(state.get('list'), action));
+    case SET_CURRENT_PAGE:
+      return state.set('currentPage', payload);
+    case SET_ITEMS_PER_PAGE:
+      return state.set('itemsPerPage', payload);
+    case SET_TOTAL_ITEMS:
+      return state.set('totalItems', payload);
+    case LIST_UPDATE_START:
+      return state.set('updating', true);
+    case LIST_UPDATE_STOP:
+      return state.set('updating', false);
+    case SET_SORT_FIELD:
+      return state.set('sortField', payload);
+    case SET_SORT_DIRECTION:
+      return state.set('sortDirection', payload);
+    default:
+      return state;
+  }
+};
+
+export default reducer;

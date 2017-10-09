@@ -1,0 +1,3 @@
+INSERT INTO `expenses` (`id`, `date`, `description`, `comment`, `amount`, `timestamp`) VALUES ("3b7e0cb2-0565-4645-8512-ed9b86c85bd3", 1417643200 ,'Pago telefono','Hay que cambiar de tarifa','5050', 1417644200);
+INSERT INTO `expenses` (`id`, `date`, `description`, `comment`, `amount`, `timestamp`) VALUES ("3b7e0cb2-0565-4645-8512-ed9b86c85bd4", 1417653200 ,'Comida restaurante Madrid','','2050', 1417664200);
+INSERT INTO `expenses` (`id`, `date`, `description`, `comment`, `amount`, `timestamp`) VALUES ("3b7e0cb2-0565-4645-8512-ed9b86c85bdt", 1417653250 ,'Medicamentos','Consultar al medico','1500', 1417664200);
