@@ -18,7 +18,7 @@ Assuming you already have Composer:
 
 ```bash
 $ cd path/to/install/expenses_back
-$ composer install
+$ composer development-enable
 
 
 Launch the Backend of the Expenses App
