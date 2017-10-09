@@ -7,12 +7,7 @@ After clone the whole project (backend and frontend)
 
 ```bash
 # git clone https://github.com/damor4321/expenses # optionally, specify the directory in which to clone
-$ cd path/to/install/expenses_back
 ```
-
-You need to use [Composer](https://getcomposer.org/) to install
-dependencies for this part. The backend. Please see the [composer.json](composer.json) file 
-in path/to/install/expenses_back director. In particular require damor4321/expenseslib from GitHub repository.
 
 Assuming you already have Composer:
 
